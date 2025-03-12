@@ -35,6 +35,18 @@
   font-size: 1rem; /* Matches the abstract font size */
 }
 
+
+.conference-tag p {
+  text-align: center;
+  font-size: 2em;  /* Matching the h1 size */
+  font-weight: bold;  /* Assuming you want it bold like a title */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+
 .section {
   background-color: #f5f5f5; /* Consistent background like the abstract */
 }
@@ -127,6 +139,12 @@
 
           </div>
 
+
+          <div class="conference-tag">
+            <p>CVPR 2025</p>
+          </div>
+
+
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
@@ -208,7 +226,7 @@ maintaining a natural layout that aligns with the prompt.
         </div>
 
 
-        
+
         <div class="item item-shiba">
         <img src="./static/counting_images/backpacks.png" alt="Descriptive text about the image" style="width:200%;">
 
@@ -233,11 +251,11 @@ maintaining a natural layout that aligns with the prompt.
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Despite the unprecedented success of text-to-image diffusion models, controlling the number of depicted objects using text is surprisingly hard. This is important for 
-            various applications from technical documents, to children’s books to illustrating cooking recipes. Generating object-correct counts is fundamentally challenging 
+            Despite the unprecedented success of text-to-image diffusion models, controlling the number of depicted objects using text is surprisingly hard. This is important for
+            various applications from technical documents, to children’s books to illustrating cooking recipes. Generating object-correct counts is fundamentally challenging
             because the generative model needs to keep a sense of separate identity for every instance of the object, even if several objects look identical or overlap, and then
 carry out a global computation implicitly during generation. It is still unknown if such representations exist. To address count-correct generation, we first identify
-features within the diffusion model that can carry the object identity information. We then use them to separate and count instances of objects during the denoising 
+features within the diffusion model that can carry the object identity information. We then use them to separate and count instances of objects during the denoising
 process and detect over-generation and under-generation. We fix the latter by training a model that proposes the right location for missing objects, based on the layout of existing ones, and show how it can be used to guide denoising
 with correct object count. Our approach, CountGen, does not depend on external source to determine object layout, but rather uses the prior from the diffusion
 model itself, creating prompt-dependent and seed-dependent layouts. Evaluated on two benchmark datasets, we find that CountGen strongly outperforms the count accuracy of existing baselines.
@@ -298,7 +316,7 @@ model itself, creating prompt-dependent and seed-dependent layouts. Evaluated on
         <div class="hero-body">
           <img src="./static/counting_images/remasker (1)-1.png" alt="Architecture of CountGen" class="image-half-width">
             <p class="content-centered">
-To address under-generation issues, we train a U-Net model to predict a new layout, represented as a multi-channel mask. To train our ReLayout U-Net, 
+To address under-generation issues, we train a U-Net model to predict a new layout, represented as a multi-channel mask. To train our ReLayout U-Net,
         we need a dataset of layout pairs with k and k +1 objects, that maintain the same scene composition. We begin with the empirical observation
         that slight variations in the object count specified in the prompt—while keeping the starting noise
         and the rest of the prompt consistent—typically results in images with similar layouts. This consistency is crucial as it allows us to generate a training dataset of
